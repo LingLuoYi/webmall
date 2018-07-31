@@ -191,6 +191,7 @@ body,
     width: 50%;
     height: 100%;
 }
+
 /* 
 .main .product .top .describe p {
     text-align: center;
@@ -214,6 +215,7 @@ body,
     line-height: 0.54rem;
     margin-bottom: 0.64rem;
 } */
+
 /* 
 .main .product .top .describe p.price {
     color: #000;
@@ -224,6 +226,7 @@ body,
     color: #4d4d4d;
     font-size: 0.22rem;
 } */
+
 /* 
 .main .product .detailText {
     font-size: 0.48rem;
@@ -234,6 +237,7 @@ body,
 } */
 
 /* bottom */
+
 /* 
 .main .product .bottom {
     position: relative;
@@ -470,12 +474,12 @@ body,
     width: 0.72rem;
     height: 0.5rem;
     top: -0.5rem;
-    background:url('../img/dbdown.jpg') no-repeat 0 0/ 100% 100%;
+    background: url('../img/dbdown.jpg') no-repeat 0 0/ 100% 100%;
     transition: all 0.01s;
 }
 
 .form-box #btn-closeFormBox.animation {
-    background:url('../img/dbup.jpg') no-repeat 0 0/ 100% 100%;
+    background: url('../img/dbup.jpg') no-repeat 0 0/ 100% 100%;
 }
 
 .form-box .form-title {
@@ -535,6 +539,11 @@ form .form-content .right img {
     height: 0.2rem;
 }
 
+form .form-content .right input {
+    -webkit-appearance: unset;
+    -webkit-user-select: text;
+}
+
 form .form-content .right>div {
     margin-left: 0.1rem;
     text-align: start;
@@ -548,6 +557,7 @@ form .form-content .right #selectModel {
     padding-left: 0.1rem;
     background-color: #fff;
 }
+
 form .form-content .right #selectModel>span {
     position: absolute;
     top: 0.05rem;
@@ -569,9 +579,11 @@ form .form-content .right #option-box {
     transition: all 1s;
     z-index: 20;
 }
+
 form .form-content .right #option-box.animation {
     overflow: unset;
 }
+
 form .form-content .right #option-box>a {
     color: #000;
     display: block;
@@ -583,6 +595,7 @@ form .form-content .right #option-box>a {
     background-color: #fff;
     border-bottom: 0.01rem solid #ccc;
 }
+
 form .form-content .right #option-box>a:first-child {
     border-top: 0.01rem solid #ccc;
 }

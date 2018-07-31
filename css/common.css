@@ -1,31 +1,5 @@
 /* 初始化样式 */
-
-body,
-div,
-header,
-main,
-nav,
-ul,
-li,
-section,
-footer,
-aside,
-form,
-label,
-span,
-a,
-p,
-i,
-em,
-b,
-strong,
-h1,
-h2,
-h3,
-h4,
-img,
-input,
-button {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;

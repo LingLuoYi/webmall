@@ -553,6 +553,11 @@ form .form-content .right img {
     height: 0.2rem;
 }
 
+form .form-content .right input {
+    -webkit-appearance: unset;
+    -webkit-user-select: text;
+}
+
 form .form-content .right>div {
     margin-left: 0.1rem;
     text-align: start;
