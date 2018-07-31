@@ -1,0 +1,616 @@
+/* 初始化样式 */
+
+body,
+div,
+header,
+main,
+nav,
+ul,
+li,
+section,
+footer,
+aside,
+form,
+label,
+span,
+a,
+p,
+i,
+em,
+b,
+strong,
+h1,
+h2,
+h3,
+h4,
+img,
+input,
+button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+a,
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #999;
+}
+
+i,
+em {
+    font-style: normal;
+}
+
+h1,
+h2,
+h3,
+h4,
+b,
+strong {
+    font-weight: normal;
+}
+
+section,
+select,
+option,
+button,
+input,
+img {
+    border: none;
+    outline: none;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+.w {
+    /* width: 15rem; */
+    width: 13rem;
+    margin: 0 auto;
+}
+
+/* 样式代码 */
+
+html {
+    font-size: 5.2083333vw;
+}
+
+body {
+    font-size: 0.16rem;
+}
+
+html,
+body,
+.wrap {
+    width: 100%;
+}
+
+.wrap {
+    position: relative;
+}
+
+/* 头部部分 */
+
+.header {
+    position: fixed;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    left: 50%;
+    margin-left: -6.5rem;
+    z-index: 9999;
+}
+
+.cover {
+    width: 100%;
+    height: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 9998;
+}
+
+#logo {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3.63rem;
+    height: 0.64rem;
+    background: url('../img/logo.png') no-repeat 0 0/3.63rem 0.64rem;
+    text-indent: -9999px;
+}
+
+.header .header-nav {
+    position: absolute;
+    right: 0;
+    height: 1.2rem;
+    line-height: 1.2rem;
+}
+
+.header .header-nav>a {
+    font-size: 0.24rem;
+    color: #fff;
+    margin-left: 0.8rem;
+}
+
+/* 主体部分 */
+
+.main {
+    width: 100%;
+}
+
+.main .banner {
+    width: 100%;
+    height: 7.83rem;
+    background: url('../img/productShowBanner.jpg') no-repeat center bottom/100% 7.83rem #141b21;
+}
+
+/* .main .product-details p.title {
+    text-align: center;
+    font-size: 0.64rem;
+    line-height: 2.36rem;
+    color: #2c2c2c;
+} */
+
+.main .product-details .describe-box {
+    /* border: 1px solid #c3c3c3; */
+    height: 18rem;
+    /* width: 30rem; */
+    margin-bottom: 0.39rem;
+}
+
+/* top */
+
+.main .product .top {
+    width: 17rem;
+    height: 18rem;
+    margin-left: -1.8rem;
+}
+
+.main .product .top img {
+    /* float: left; */
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    /* margin-top: 1rem; */
+}
+
+.main .product .top .describe {
+    /* float: right; */
+    width: 50%;
+    height: 100%;
+}
+/* 
+.main .product .top .describe p {
+    text-align: center;
+    color: #4d4d4d;
+}
+
+.main .product .top .describe p.name {
+    font-size: 0.26rem;
+    margin-top: 2.08rem;
+}
+
+.main .product .top .describe p.slug {
+    color: #000;
+    font-size: 0.42rem;
+    line-height: 1.78rem;
+    margin-bottom: 0.16rem;
+}
+
+.main .product .top .describe p.performance {
+    font-size: 0.22rem;
+    line-height: 0.54rem;
+    margin-bottom: 0.64rem;
+} */
+/* 
+.main .product .top .describe p.price {
+    color: #000;
+    font-size: 0.44rem;
+}
+
+.main .product .top .describe p.price>span {
+    color: #4d4d4d;
+    font-size: 0.22rem;
+} */
+/* 
+.main .product .detailText {
+    font-size: 0.48rem;
+    text-align: center;
+    line-height: 1.76rem;
+    font-weight: bold;
+    color: #5a5a5a;
+} */
+
+/* bottom */
+/* 
+.main .product .bottom {
+    position: relative;
+    width: 100%;
+    height: 9.61rem;
+    padding-top: 1.01rem;
+}
+
+.main .product .bottom .properties {
+    position: absolute;
+    left: 0.6rem;
+    width: 50%;
+    height: 9.61rem;
+    z-index: 1;
+}
+
+.main .product .bottom .properties p {
+    color: #2c2c2c;
+    font-size: 0.26rem;
+    line-height: 0.96rem;
+    text-align: left;
+}
+
+.main .product .bottom img {
+    position: absolute;
+    right: 0;
+    width: 60%;
+    top: 3rem;
+} */
+
+/* 主体部分结束 */
+
+/* 底部部分 */
+
+.footer {
+    width: 100%;
+    height: 3.50rem;
+}
+
+.footer .aboutUs {
+    width: 100%;
+    height: 3rem;
+    color: #adadad;
+    background: url('../img/footerbg.jpg') no-repeat left bottom / 100% 3rem;
+}
+
+.footer .aboutUs .inner {
+    display: flex;
+    height: 100%;
+}
+
+.footer .aboutUs .about-us {
+    flex: 1;
+    height: 100%;
+}
+
+.aboutUs .about-us .title {
+    font-size: 0.22rem;
+    line-height: 1.32rem;
+}
+
+.aboutUs .about-us .content {
+    width: 6.30rem;
+    font-size: 0.16rem;
+    line-height: 0.24rem;
+}
+
+.aboutUs .footer-nav {
+    flex: 1;
+    height: 100%;
+    display: flex;
+}
+
+.aboutUs .footer-nav span {
+    /* display: inline-block; */
+    /* width: 3rem; */
+    flex: 1;
+    height: 100%;
+    overflow: hidden;
+}
+
+.aboutUs .footer-nav span:nth-child(3) {
+    width: unset;
+}
+
+.aboutUs .footer-nav p {
+    width: 100%;
+    font-size: 0.22rem;
+    line-height: 1.30rem;
+}
+
+.aboutUs .footer-nav li {
+    font-size: 0.16rem;
+    line-height: 0.32rem;
+}
+
+.footer .copyright {
+    font-size: 0.16rem;
+    width: 100%;
+    height: 0.50rem;
+    line-height: 0.50rem;
+    text-align: center;
+    color: #adadad;
+    background: url('../img/copyrightbg.jpg') no-repeat center bottom/100% 0.50rem #000000;
+}
+
+/* 侧边图片栏 */
+
+.sidebar {
+    position: fixed;
+    z-index: 999;
+    right: 0;
+    bottom: 50%;
+    width: 0.55rem;
+    height: 3.2rem;
+    background-color: #151f2b;
+    opacity: 0.6;
+}
+
+.sidebar:hover {
+    opacity: 1;
+}
+
+.sidebar .btnList a {
+    margin: 0.22rem auto 0;
+    opacity: 0.6;
+    display: block;
+    width: 0.38rem;
+    height: 0.16rem;
+    background: url('../img/up.png') no-repeat 0 0/0.38rem 0.16rem;
+}
+
+.sidebar .btnList li:nth-child(2) a {
+    width: 0.41rem;
+    height: 0.33rem;
+    background: url('../img/wechat.png') no-repeat 0 0/0.41rem 0.33rem;
+}
+
+.sidebar .btnList li:nth-child(3) a {
+    width: 0.32rem;
+    height: 0.34rem;
+    background: url('../img/phone.png') no-repeat 0 0/ 0.32rem 0.34rem;
+}
+
+.sidebar .btnList li:nth-child(4) a {
+    width: 0.40rem;
+    height: 0.43rem;
+    background: url('../img/qq.png') no-repeat 0 0/ 0.40rem 0.43rem;
+}
+
+.sidebar .btnList li:nth-child(5) a {
+    margin-top: 0.14rem;
+    width: 0.35rem;
+    height: 0.15rem;
+    background: url('../img/down.png') no-repeat 0 0/0.35rem 0.15rem;
+}
+
+.sidebar .btn-close {
+    opacity: 0.3;
+    display: block;
+    margin: 0.22rem auto 0;
+    width: 0.39rem;
+    height: 0.39rem;
+    background: url('../img/close.png') no-repeat 0 0/ 0.39rem 0.39rem;
+}
+
+.sidebar .qrcode {
+    width: 1.6rem;
+    height: 1.6rem;
+    position: absolute;
+    top: 50%;
+    margin-top: -1rem;
+    right: 0.55rem;
+    background-color: #151f2b;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    display: none;
+}
+
+.sidebar .qrcode img {
+    position: absolute;
+    top: 50%;
+    margin-top: -0.6rem;
+    left: 50%;
+    margin-left: -0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    display: none;
+}
+
+.sidebar .qrcode .phoneContact {
+    position: absolute;
+    top: 0.3rem;
+    left: 0.2rem;
+    width: 100%;
+    display: none;
+}
+
+.sidebar .qrcode .phoneContact p {
+    color: #fff;
+    text-align: start;
+    font-size: 0.16rem;
+    line-height: 0.3rem;
+}
+
+/* 表单弹窗部分 */
+
+.form-box {
+    padding: 0 0.12rem;
+    width: 4.6rem;
+    height: 4rem;
+    background-color: #e1e1e1;
+    position: fixed;
+    right: 0.55rem;
+    bottom: 0.01rem;
+    z-index: 999;
+    opacity: 0.8;
+    border-top-left-radius: 0.3rem;
+}
+
+.form-box:hover {
+    opacity: 1;
+}
+
+.form-box.moveToCenter {
+    right: 50%;
+    bottom: 50%;
+    transform: translate(50%, 50%);
+}
+
+.form-box #btn-closeFormBox {
+    position: absolute;
+    right: 0;
+    width: 0.72rem;
+    height: 0.5rem;
+    top: -0.5rem;
+    background:url('../img/dbdown.jpg') no-repeat 0 0/ 100% 100%;
+    transition: all 0.01s;
+}
+
+.form-box #btn-closeFormBox.animation {
+    background:url('../img/dbup.jpg') no-repeat 0 0/ 100% 100%;
+}
+
+.form-box .form-title {
+    line-height: 0.8rem;
+    font-size: 0.4rem;
+    color: #000;
+    text-align: center;
+    border-bottom: 0.01rem solid #b8bbbd;
+}
+
+.form-box form {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.form-box form .form-content {
+    width: 100%;
+    height: 2.6rem;
+    display: flex;
+}
+
+form .form-content .left {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form .form-content .left>div {
+    margin-right: 0.1rem;
+    text-align: end;
+    font-size: 0.24rem;
+}
+
+form .form-content .left i {
+    color: #f00;
+}
+
+form .form-content .right {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+form .form-content .right img {
+    margin-left: 0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+}
+
+form .form-content .right>div {
+    margin-left: 0.1rem;
+    text-align: start;
+    font-size: 0.24rem;
+}
+
+form .form-content .right #selectModel {
+    position: relative;
+    width: 1.4rem;
+    height: 0.3rem;
+    padding-left: 0.1rem;
+    background-color: #fff;
+}
+form .form-content .right #selectModel>span {
+    position: absolute;
+    top: 0.05rem;
+    right: 0.1rem;
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url('../img/dropdown.png') no-repeat 0 0/ 100% 100%;
+}
+
+form .form-content .right #option-box {
+    width: 1.4rem;
+    height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0.3rem;
+    left: 0;
+    display: block;
+    background-color: #fff;
+    transition: all 1s;
+    z-index: 20;
+}
+form .form-content .right #option-box.animation {
+    overflow: unset;
+}
+form .form-content .right #option-box>a {
+    color: #000;
+    display: block;
+    width: 1.4rem;
+    height: 0.3rem;
+    font-size: 0.16rem;
+    line-height: 0.3rem;
+    padding-left: 0.1rem;
+    background-color: #fff;
+    border-bottom: 0.01rem solid #ccc;
+}
+form .form-content .right #option-box>a:first-child {
+    border-top: 0.01rem solid #ccc;
+}
+
+form .form-content .right>div input {
+    height: 0.3rem;
+    padding-left: 0.1rem;
+    border-radius: 0;
+}
+
+form .form-content .right #productsNumber {
+    width: 0.8rem;
+    margin-right: 0.1rem;
+}
+
+form .form-content .right #telNumber {
+    width: 1.4rem;
+}
+
+form .form-content .right #username {
+    width: 1.2rem;
+}
+
+.form-box #btn-submit {
+    font-size: 0.22rem;
+    width: 2rem;
+    height: 0.5rem;
+    line-height: 0.5rem;
+    background-color: #151f2b;
+    color: #fff;
+}
