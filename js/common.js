@@ -163,19 +163,20 @@ $(function () {
         var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
         if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM)) {
             if (window.innerWidth <= 1200) {
-                $('html')[0].style.fontSize = '62.5px';
-                $('html')[0].style.minWidth = '1200px';
-                $('body')[0].style.minWidth = '1200px';
-                $('.wrap')[0].style.minWidth = '1200px';
-
-            } else {
+                //$('html')[0].style.fontSize = '62.5px';
+                //$('html')[0].style.minWidth = '1200px';
+                //$('body')[0].style.minWidth = '1200px';
+                //$('.wrap')[0].style.minWidth = '1200px';
                 $('html')[0].style.fontSize = '5.2083333vw';
                 $('html')[0].style.minWidth = 'unset';
                 $('body')[0].style.minWidth = 'unset';
                 $('.wrap')[0].style.minWidth = 'unset';
             }
         } else {
-
+            $('html')[0].style.fontSize = '62.5px';
+            $('html')[0].style.minWidth = '1200px';
+            $('body')[0].style.minWidth = '1200px';
+            $('.wrap')[0].style.minWidth = '1200px';
             $('.form-box form').on('click', function () {
                 $('.form-box').addClass('moveToCenter');
                 moveToCenter();
@@ -251,4 +252,128 @@ $(function () {
         e.preventDefault();
         $('.selectValue').text($(this).text());
     });
+
+    //
+    var BrowserMatch = {
+        init: function() {
+            this.browser = this.getBrowser().browser || "An Unknown Browser";
+            this.version = this.getBrowser().version || "An Unknown Version";
+            this.OS = this.getOS() || "An Unknown OS";
+        },
+        getOS: function() {
+            if (navigator.platform.indexOf("Win") != -1) return "Windows";
+            if (navigator.platform.indexOf("Mac") != -1) return "Mac";
+            if (navigator.platform.indexOf("Linux") != -1) return "Linux";
+            if (navigator.userAgent.indexOf("iPhone") != -1) return "iPhone/iPod";
+        },
+        getBrowser: function() {
+            var rMsie = /(msie\s|trident\/7)([\w\.]+)/;
+            var rTrident = /(trident)\/([\w.]+)/;
+            var rFirefox = /(firefox)\/([\w.]+)/;
+            var rOpera = /(opera).+version\/([\w.]+)/;
+            var rNewOpera = /(opr)\/(.+)/;
+            var rChrome = /(chrome)\/([\w.]+)/;
+            var rSafari = /version\/([\w.]+).*(safari)/;
+            var ua = navigator.userAgent.toLowerCase();
+            var matchBS, matchBS2;
+            matchBS = rMsie.exec(ua);
+            if (matchBS != null) {
+                matchBS2 = rTrident.exec(ua);
+                if (matchBS2 != null) {
+                    switch (matchBS2[2]) {
+                        case "4.0":
+                            return {
+                                browser:
+                                    "IE",
+                                version: "8"
+                            };
+                            break;
+                        case "5.0":
+                            return {
+                                browser:
+                                    "IE",
+                                version: "9"
+                            };
+                            break;
+                        case "6.0":
+                            return {
+                                browser:
+                                    "IE",
+                                version: "10"
+                            };
+                            break;
+                        case "7.0":
+                            return {
+                                browser:
+                                    "IE",
+                                version: "11"
+                            };
+                            break;
+                        default:
+                            return {
+                                browser:
+                                    "IE",
+                                version: "Undefined"
+                            };
+                    }
+                } else {
+                    return {
+                        browser: "IE",
+                        version: matchBS[2] || "0"
+                    };
+                }
+            }
+            matchBS = rFirefox.exec(ua);
+            if ((matchBS != null) && (!(window.attachEvent)) && (!(window.chrome)) && (!(window.opera))) {
+                return {
+                    browser: matchBS[1] || "",
+                    version: matchBS[2] || "0"
+                };
+            }
+            matchBS = rOpera.exec(ua);
+            if ((matchBS != null) && (!(window.attachEvent))) {
+                return {
+                    browser: matchBS[1] || "",
+                    version: matchBS[2] || "0"
+                };
+            }
+            matchBS = rChrome.exec(ua);
+            if ((matchBS != null) && ( !! (window.chrome)) && (!(window.attachEvent))) {
+                matchBS2 = rNewOpera.exec(ua);
+                if (matchBS2 == null) {
+                    return {
+                        browser: matchBS[1] || "",
+                        version: matchBS[2] || "0"
+                    };
+                } else {
+                    return {
+                        browser: "Opera",
+                        version: matchBS2[2] || "0"
+                    };
+                }
+            }
+            matchBS = rSafari.exec(ua);
+            if ((matchBS != null) && (!(window.attachEvent)) && (!(window.chrome)) && (!(window.opera))) {
+                return {
+                    browser: matchBS[2] || "",
+                    version: matchBS[1] || "0"
+                };
+            }
+        }
+    };
+
+    function tshi(){
+        BrowserMatch.init();
+        if(BrowserMatch.browser=='safari'){
+            alert("使用当前浏览器访问可能造成不好的访问效果，请更换，我们推荐使用谷歌浏览器");
+        }
+        if( BrowserMatch.browser == "IE"){
+            if(BrowserMatch.version == "8")
+                alert("使用当前浏览器访问可能造成不好的访问效果，请更换，我们推荐使用谷歌浏览器");
+        }
+    }
+
+    window.onload=tshi();
+
+    //alert("当前浏览器为：" + BrowserMatch.browser +"\n版本为："+ BrowserMatch.version + "\n所处操作系统为："+BrowserMatch.OS);
 });

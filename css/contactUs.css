@@ -632,3 +632,12 @@ form .form-content .right #username {
     background-color: #151f2b;
     color: #fff;
 }
+#wei_img{
+    position: absolute;
+    display: none;
+    top: -315px;
+}
+#wei{
+    position: relative;
+}
+

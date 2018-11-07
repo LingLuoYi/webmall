@@ -5,11 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>矿机商城-产品</title>
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/iconfont/iconfont.css">
     <link rel="stylesheet" href="lib/swiper/swiper.min.css">
     <link rel="stylesheet" href="css/allProducts.css">
+    <script src="./lib/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="./lib/swiper/swiper.min.js"></script>
+    <script src="js/common.js"></script>
+    <style>
+        .w-nav{
+            width: 13rem;
+            height: 60px;
+            margin: 0 auto;
+        }
+        .w-nav>ul{
+            width: 500px;
+            height: 100%;
+            display: flex;
+            flex: 1;
+        }
+        .w-nav>ul>li{
+            flex: 1;
+            line-height: 60px;
+            text-align: center;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+        .w-nav>ul>li:hover{
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a5a5a;
+            border-bottom: 3px solid #1e252e;
+        }
+        .active{
+            font-size: 14px;
+            font-weight: bold;
+            color: #5a5a5a;
+            border-bottom: 3px solid #1e252e;
+        }
+    </style>
 </head>
 
 <body>
@@ -22,7 +57,7 @@
                 </a>
                 <nav class="header-nav">
                     <a href="index.html">网站首页</a>
-                    <a href="productShow.html">产品展示</a>
+                    <a href="productShow.html">热销产品</a>
                     <a href="allProducts.html">全部产品</a>
                     <a href="aboutUs.html">关于我们</a>
                     <a href="contactUs.html">联系我们</a>
@@ -39,128 +74,7 @@
         <!--  -->
         <main class="main">
             <section class="top w">
-                <div class="category-box">
-                    <ul>
-                        <li>
-                            <a href="javascript:">比特币矿机</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">莱特币矿机</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">达世币矿机</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">显卡矿机</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">无线路由器</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">电源</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                        <li>
-                            <a href="javascript:">其他矿机</a>
-                            <i class="iconfont icon-jiantou"></i>
-                        </li>
-                    </ul>
-                    <div class="category category1">
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/bit/products2_16.jpg" alt="">
-                                <!-- <p class="name">Innosilicon A4 矿机</p>
-                                <p class="price">10500元</p> -->
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/bit/products2_18.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/bit/products2_38.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="category category2">
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/light/products2_16.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/light/products2_18.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/light/products2_38.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="category category3">
-                        <div class="products">
-                            <a href="./productItems/A5.html">
-                                <img src="./img/products/dash/products2_16.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/A5PLUS.html">
-                                <img src="./img/products/dash/products2_18.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/T2bit.html">
-                                <img src="./img/products/dash/products2_38.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="category category4">
-
-                    </div>
-                    <div class="category category5">
-
-                    </div>
-                    <div class="category category6">
-
-                    </div>
-                    <div class="category category7">
-                        <div class="products">
-                            <a href="./productItems/A9.html">
-                                <img src="./img/products/others/products2_18.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/S11.html">
-                                <img src="./img/products/others/products2_20.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/A8PLUS.html">
-                                <img src="./img/products/others/products2_22.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/D9.html">
-                                <img src="./img/products/others/products2_44.jpg" alt="">
-                            </a>
-                        </div>
-                        <div class="products">
-                            <a href="./productItems/A8CP.html">
-                                <img src="./img/products/others/products2_46.jpg" alt="">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-container swiper">
+                <div class="swiper-container swiper" style="width: 100%">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <a href="./productItems/D9.html">
@@ -176,61 +90,266 @@
                     <div class="swiper-pagination"></div>
                 </div>
             </section>
-            <section class="bottom w">
+
+
+
+
+            <div class="w-nav">
+                <ul>
+                    <li class="active choose open1">全部矿机</li>
+                    <li class="choose open2">芯动矿机</li>
+                    <li class="choose open3">蚂蚁矿机</li>
+                    <li class="choose open4">神马矿机</li>
+                    <li class="choose open5">阿瓦隆矿机</li>
+                </ul>
+            </div>
+            <!--全部-->
+            <section class="bottom w openning1">
                 <div class="products-items">
                     <a href="./productItems/T2bit.html">
-                        <img src="./img/products/products2_46.jpg" alt="" class="feature">
+                        <img src="img/products/xindong/T2.jpg" alt="" class="feature">
                     </a>
-
-                    <!-- <p class="name">Innosilicon A9 矿机</p>
-                    <p class="sub">11月30号-12月10号期货限量预定，70%订金</p>
-                    <p class="price">10500元</p> -->
                 </div>
                 <div class="products-items">
                     <a href="./productItems/A9.html">
-                        <img src="./img/products/products2_48.jpg" alt="">
+                        <img src="img/products/xindong/A9.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/S11.html">
-                        <img src="./img/products/products2_50.jpg" alt="">
+                        <img src="img/products/xindong/S11.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/D9.html">
-                        <img src="./img/products/products2_52.jpg" alt="">
+                        <img src="img/products/xindong/D9+.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/A8PLUS.html">
-                        <img src="./img/products/products2_68.jpg" alt="">
+                        <img src="img/products/xindong/A8+.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/A8CP.html">
-                        <img src="./img/products/products2_70.jpg" alt="">
+                        <img src="img/products/xindong/A8.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/A6.html">
-                        <img src="./img/products/products2_72.jpg" alt="">
+                        <img src="img/products/xindong/A6.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/A5PLUS.html">
-                        <img src="./img/products/products2_74.jpg" alt="">
+                        <img src="img/products/xindong/A5+.jpg" alt="">
+                    </a>
                 </div>
-                </a>
                 <div class="products-items">
                     <a href="./productItems/A4PLUS.html">
-                        <img src="./img/products/products2_90.jpg" alt="">
+                        <img src="img/products/xindong/A4+.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/A5.html">
+                        <img src="img/products/xindong/A5.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/S9i.html">
+                        <img src="img/products/mayi/S9i.jpg" alt="" class="feature">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/S9j.html">
+                        <img src="img/products/mayi/S9j.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Z9.html">
+                        <img src="img/products/mayi/Z9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Z9mini.html">
+                        <img src="img/products/mayi/Z9mini.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Dr3.html">
+                        <img src="img/products/mayi/Dr3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/D3.html">
+                        <img src="img/products/mayi/D3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/E3.html">
+                        <img src="img/products/mayi/E3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/L3++.html">
+                        <img src="img/products/mayi/L3++.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/M3.html">
+                        <img src="img/products/shenma/M3.jpg" alt="" class="feature">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/M3x.html">
+                        <img src="img/products/shenma/M3x.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/M10.html">
+                        <img src="img/products/shenma/M10.jpg" alt="">
                 </div>
                 </a>
                 <div class="products-items">
-                    <a href="./productItems/A5.html">
-                        <img src="./img/products/products2_92.jpg" alt="">
+                    <a href="./productItems/M10S.html">
+                        <img src="img/products/shenma/M10S.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/LA9.html">
+                        <img src="img/products/awalong/LA9.jpg" alt="">
+                    </a>
                 </div>
                 </a>
+                <div class="products-items">
+                    <a href="./productItems/l741.html">
+                        <img src="img/products/awalong/L741.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/L841.html">
+                        <img src="img/products/awalong/L841.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <!--全部结束-->
+            <!--芯动-->
+            <section class="bottom w openning2">
+                <div class="products-items">
+                    <a href="./productItems/T2bit.html">
+                        <img src="img/products/xindong/T2.jpg" alt="" class="feature">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/A9.html">
+                        <img src="img/products/xindong/A9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/S11.html">
+                        <img src="img/products/xindong/S11.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/D9.html">
+                        <img src="img/products/xindong/D9+.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/A8PLUS.html">
+                        <img src="img/products/xindong/A8+.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/A8CP.html">
+                        <img src="img/products/xindong/A8.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <!--蚂蚁-->
+            <section class="bottom w openning3">
+                <div class="products-items">
+                    <a href="./productItems/S9i.html">
+                        <img src="img/products/mayi/S9i.jpg" alt="" class="feature">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/S9j.html">
+                        <img src="img/products/mayi/S9j.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Z9.html">
+                        <img src="img/products/mayi/Z9.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Z9mini.html">
+                        <img src="img/products/mayi/Z9mini.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/Dr3.html">
+                        <img src="img/products/mayi/Dr3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/D3.html">
+                        <img src="img/products/mayi/D3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/E3.html">
+                        <img src="img/products/mayi/E3.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/L3++.html">
+                        <img src="img/products/mayi/L3++.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <!--神马-->
+            <section class="bottom w openning4">
+                <div class="products-items">
+                    <a href="./productItems/M3.html">
+                        <img src="img/products/shenma/M3.jpg" alt="" class="feature">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/M3x.html">
+                        <img src="img/products/shenma/M3x.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/M10.html">
+                        <img src="img/products/shenma/M10.jpg" alt="">
+                </div>
+                </a>
+                <div class="products-items">
+                    <a href="./productItems/M10S.html">
+                        <img src="img/products/shenma/M10S.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <!--阿瓦隆-->
+            <section class="bottom w openning5">
+                <div class="products-items">
+                    <a href="./productItems/LA9.html">
+                        <img src="img/products/awalong/LA9.jpg" alt="">
+                    </a>
+                </div>
+                </a>
+                <div class="products-items">
+                    <a href="./productItems/L741.html">
+                        <img src="img/products/awalong/L741.jpg" alt="">
+                    </a>
+                </div>
+                <div class="products-items">
+                    <a href="./productItems/L841.html">
+                        <img src="img/products/awalong/L841.jpg" alt="">
+                    </a>
+                </div>
             </section>
         </main>
         <!--  -->
@@ -241,7 +360,7 @@
                 <div class="inner w">
                     <div class="about-us">
                         <p class="title">关于我们</p>
-                        <p class="content">芯动科技是一家追求创新的世界一流IP/IC设计公司，专注于高性能PHY和混合信合IP，在中国和北美拥有世界级的跨国设计团队。通过先进的产品和服务，芯动科技IP已经帮助许多一线公司实现了SOC的快速成功（每年芯片出货量超过3000万）。</p>
+                        <p class="content">深圳市蚂蚁区块链科技有限公司是一家致力于区块链领域的科技公司。公司团队从2017年开始区块链的设计与研发，经过持续的研发与改进，逐步形成了以基于区块链应用为基础，致力于运用云计算、大数据、区块链等先进技术，打造基于云端的、集投融资、支付、清结算和市场营销等功能为一体的金融云平台。</p>
                     </div>
                     <nav class="footer-nav">
                         <span class="help-center">
@@ -256,7 +375,7 @@
                                     <a href="./aboutUs.html">使用条款</a>
                                 </li>
                                 <li>
-                                    <a href="./aboutUs.html">质量问题15天内换货</a>
+                                    <a href="./aboutUs.html">180天内保修</a>
                                 </li>
                             </ul>
                         </span>
@@ -286,115 +405,11 @@
                     </nav>
                 </div>
             </section>
-            <p class="copyright">201&#x2467; Jerry Design.All Rights Reserved</p>
+            <p class="copyright">2017-2018;深圳市蚂蚁区块链科技有限公司---<a href="http://www.miitbeian.gov.cn/" target="_blank">粤ICP备18106718号-2</a></p>
         </footer>
         <!--  -->
 
-        <!--  -->
-        <aside class="sidebar">
-            <ul class="btnList">
-                <li>
-                    <a href="#"></a>
-                </li>
-                <li>
-                    <a id="btn-wechat" href="javascript:;"></a>
-                </li>
-                <li>
-                    <a id="btn-phone" href="javascript:;"></a>
-                </li>
-                <li>
-                    <a id="btn-qq" href="javascript:;"></a>
-                </li>
-                <li>
-                    <a href="#footer"></a>
-                </li>
-            </ul>
-            <a href="javascript:" class="btn-close" id="btn-close-sidebar"></a>
-            <div class="qrcode">
-                <img class="wechat-qrcode" src="./img/wechat-qrcode.png" alt="">
-                <div class="phoneContact">
-                    <p>芯动咨询热线：</p>
-                    <p>136-2092-9174</p>
-                    <p>(张经理)</p>
-                </div>
-                <img class="qq-qrcode" src="./img/qq-qrcode.png" alt="">
-            </div>
-        </aside>
-        <!--  -->
-
-        <!--  -->
-        <aside class="form-box">
-            <a href="javascript:" id="btn-closeFormBox">
-                <i></i>
-            </a>
-            <p class="form-title">客户需求表</p>
-            <form action="">
-                <div class="form-content">
-                    <div class="left">
-                        <div>
-                            <label for="selectModel">所需的产品型号
-                                <i>*</i>
-                            </label>
-                        </div>
-                        <div>
-                            <label for="productsNumber">产品数量
-                                <i>*</i>
-                            </label>
-                        </div>
-                        <div>
-                            <label for="telNumber">您的电话号码
-                                <i>*</i>
-                            </label>
-                        </div>
-                        <div>
-                            <label for="username">您的称呼
-                                <i>*</i>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="right">
-                        <div>
-                            <div id="selectModel">
-                                <div class="selectValue"></div>
-                                <span></span>
-                                <div id="option-box">
-                                    <a href="javascript:"></a>
-                                    <a href="javascript:">芯动A9</a>
-                                    <a href="javascript:">测试1</a>
-                                    <a href="javascript:">测试2</a>
-                                    <a href="javascript:">测试3</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <input type="text" name="productsNumber" id="productsNumber">台
-                            <span>
-                                <img src="" alt="">
-                            </span>
-                        </div>
-                        <div>
-                            <input type="text" name="telNumber" id="telNumber">
-                            <span>
-                                <img src alt="">
-                            </span>
-                        </div>
-                        <div>
-                            <input type="text" name="username" id="username">
-                            <span>
-                                <img src="" alt="">
-                            </span>
-                        </div>
-                    </div>
-                </div>
-
-                <button type="submit" id="btn-submit">上传需求</button>
-            </form>
-        </aside>
-        <!--  -->
     </div>
-    <script src="./lib/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="./lib/swiper/swiper.min.js"></script>
-    <script src="js/common.js"></script>
     <script>
         $(function () {
             var swiper = new Swiper('.swiper-container', {
@@ -420,8 +435,50 @@
             $('.category').on('mouseleave', function () {
                 $(this).hide();
             });
+            $('.w-nav>ul>li').on('click',function () {
+                $(this).addClass('active').siblings().removeClass('active')
+            });
+            $('.openning2').hide();
+            $('.openning3').hide();
+            $('.openning4').hide();
+            $('.openning5').hide();
+            $('.open2').click(function () {
+                $('.openning2').show();
+                $('.openning1').hide();
+                $('.openning3').hide();
+                $('.openning4').hide();
+                $('.openning5').hide();
+            })
+            $('.open1').click(function () {
+                $('.openning2').hide();
+                $('.openning1').show();
+                $('.openning3').hide();
+                $('.openning4').hide();
+                $('.openning5').hide();
+            })
+            $('.open3').click(function () {
+                $('.openning2').hide();
+                $('.openning1').hide();
+                $('.openning3').show();
+                $('.openning4').hide();
+                $('.openning5').hide();
+            })
+            $('.open4').click(function () {
+                $('.openning2').hide();
+                $('.openning1').hide();
+                $('.openning3').hide();
+                $('.openning4').show();
+                $('.openning5').hide();
+            })
+            $('.open5').click(function () {
+                $('.openning2').hide();
+                $('.openning1').hide();
+                $('.openning3').hide();
+                $('.openning4').hide();
+                $('.openning5').show();
+            })
         });
     </script>
+    <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10184269/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
 </body>
-
 </html>
