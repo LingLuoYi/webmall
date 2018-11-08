@@ -118,7 +118,7 @@ body,
     transform: translateY(-50%);
     width: 3.63rem;
     height: 0.64rem;
-    background: url('../img/logo.png') no-repeat 0 0/3.63rem 0.64rem;
+    background: url('../../img/logo.png') no-repeat 0 0/3.63rem 0.64rem;
     text-indent: -9999px;
 }
 

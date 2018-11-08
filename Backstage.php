@@ -63,7 +63,6 @@ body,ul,li{margin:0;padding:0;}
      if($handle){
          while(($fl = readdir($handle)) !== false){
              $temp = $dir.DIRECTORY_SEPARATOR.$fl;
-             //如果不加  $fl!='.' && $fl != '..'  则会造成把$dir的父级目录也读取出来
              if(is_dir($temp) && $fl!='.' && $fl != '..'){
                  echo '<li style = "list-style-type :none;"><a id = "'.$temp.'" href = "javascript:" onclick = "cnm(this.id)">目录：'.$temp;
                  echo '</a></li>';
