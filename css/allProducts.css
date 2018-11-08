@@ -367,7 +367,7 @@ header .tip i {
 }
 
 .aboutUs .footer-nav {
-    flex: 1;
+    flex: 0.5;
     height: 100%;
     display: flex;
 }
