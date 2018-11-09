@@ -20,9 +20,7 @@ $header = new Header();
     <link rel="stylesheet" href="../css/iconfont/iconfont.css">
     <link rel="stylesheet" href="../lib/swiper/swiper.min.css">
     <link rel="stylesheet" href="../css/allProducts.css">
-    <script src="../lib/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="../lib/swiper/swiper.min.js"></script>
-    <script src="../js/common.js"></script>
+    <link rel="stylesheet" href="../css/index.css">
     <style>
         .w-nav{
             width: 13rem;
@@ -73,9 +71,3 @@ $header = new Header();
                 ?>
             </nav>
         </div>
-        <div class="tip">
-            <p class="w">
-                    <span>
-                        <i></i>公告</span><?php echo $header->notice?></p>
-        </div>
-    </header>

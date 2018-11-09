@@ -5,7 +5,6 @@
  * Date: 2018/11/8
  * Time: 10:55 AM
  */
-header("Content-type: text/html; charset=utf-8");
 $footer = new Footer();
 ?>
 <footer class="footer">
@@ -54,9 +53,12 @@ $footer = new Footer();
 <!--  -->
 
 </div>
+<script src="../lib/jQuery/jquery-3.3.1.min.js"></script>
+<script src="../lib/swiper/swiper.min.js"></script>
+<script src="../js/common.js"></script>
 <script>
     $(function () {
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.swiper-products', {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
@@ -82,45 +84,90 @@ $footer = new Footer();
         $('.w-nav>ul>li').on('click',function () {
             $(this).addClass('active').siblings().removeClass('active')
         });
-        $('.openning2').hide();
-        $('.openning3').hide();
-        $('.openning4').hide();
-        $('.openning5').hide();
-        $('.open2').click(function () {
-            $('.openning2').show();
-            $('.openning1').hide();
-            $('.openning3').hide();
-            $('.openning4').hide();
-            $('.openning5').hide();
-        })
-        $('.open1').click(function () {
-            $('.openning2').hide();
-            $('.openning1').show();
-            $('.openning3').hide();
-            $('.openning4').hide();
-            $('.openning5').hide();
-        })
-        $('.open3').click(function () {
-            $('.openning2').hide();
-            $('.openning1').hide();
-            $('.openning3').show();
-            $('.openning4').hide();
-            $('.openning5').hide();
-        })
-        $('.open4').click(function () {
-            $('.openning2').hide();
-            $('.openning1').hide();
-            $('.openning3').hide();
-            $('.openning4').show();
-            $('.openning5').hide();
-        })
-        $('.open5').click(function () {
-            $('.openning2').hide();
-            $('.openning1').hide();
-            $('.openning3').hide();
-            $('.openning4').hide();
-            $('.openning5').show();
-        })
+
+        <?php
+            foreach ($menu as $menus){
+               echo "$('.open".$menus->getCode()."').hide();\n";
+               echo "$('.open1').click(function () {\n";
+                echo "$('.open".$menus->getCode()."').hide();\n";
+                echo "$('.openning1').show();\n";
+                echo "})\n";
+               echo "$('.".$menus->getCode()."').click(function () {\n";
+               echo "$('.openning1').hide();\n";
+               echo "$('.open".$menus->getCode()."').show();\n";
+               foreach ($menu as $me){
+                   if ($me->getCode()!= $menus->getCode()){
+                       echo "$('.open".$me->getCode()."').hide();\n";
+                   }
+               }
+               echo "})\n";
+
+            }
+        ?>
+    });
+    /////////////////////////////////////
+    $(function () {
+        var swiper = new Swiper('.swiper-index', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            mousewheel: {
+                releaseOnEdges: true,
+            },
+            autoplay: true,
+            speed: 2000,
+            // loop: true
+        });
+        $('.swiper-index').on({
+            'mouseenter': function () {
+                $('.swiper-button-next').show();
+                $('.swiper-button-prev').show();
+            },
+            'mouseleave': function () {
+                $('.swiper-button-next').hide();
+                $('.swiper-button-prev').hide();
+            }
+        });
+        $('.swiper-index').mouseenter(function () {
+            swiper.stopAutoplay();
+            swiper.enableMousewheelControl();
+        });
+        $('.swiper-index').mouseleave(function () {
+            swiper.startAutoplay();
+            swiper.disableMousewheelControl();
+        });
+        //导航条浮动
+        // var headerTop = $('.header').offset().top;
+        // $(window).on('scroll', function (e) {
+        //     e = e || window.event;
+        //     var windowTop = $(window).scrollTop();
+        //     if (windowTop >= headerTop) {
+        //         $('.header').css({
+        //             'position': 'fixed',
+        //             'top': '0'
+        //         });
+        //     } else {
+        //         $('.header').css({
+        //             'position': 'absolute',
+        //         });
+        //     }
+        //     if (windowTop >= headerTop) {
+        //         $('.cover').css({
+        //             'position': 'fixed',
+        //             'top': '0',
+        //             'backgroundColor': 'rgba(0, 0, 0, 0.5)'
+        //         });
+        //     } else {
+        //         $('.cover').css({
+        //             'position': 'absolute',
+        //             'backgroundColor': 'rgba(0, 0, 0, 0.5)'
+        //         });
+        //     }
+        // });
     });
 </script>
 <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10184269/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
