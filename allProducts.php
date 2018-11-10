@@ -19,7 +19,7 @@ include "split/header.php";
 <div class="tip">
     <p class="w">
                     <span>
-                        <i></i>公告</span><?php echo $header->notice?></p>
+                        <i></i>公告</span><?php echo $pr->getOneOther("Notice")?></p>
 </div>
 </header>
         <!--  -->

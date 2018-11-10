@@ -10,6 +10,8 @@ require_once '/var/www/html/db/objectdb.php';
 require_once '/var/www/html/model/Products.php';
 require_once '/var/www/html/model/Menu.php';
 require_once '/var/www/html/model/Banner.php';
+require_once '/var/www/html/model/Navigation.php';
+require_once '/var/www/html/model/Img.php';
 
 class ProductsServer
 {
@@ -157,4 +159,148 @@ class ProductsServer
         $dbhandle = objectdb::defaultdb($dbPath);
         $dbhandle->removeValueForKey($key);
     }
+
+    /**
+     * 添加导航菜单
+     * @param $name
+     * @param $url
+     * @param $state
+     * @param $key
+     * @return bool
+     */
+    function addNav($name,$url,$state,$key){
+        $dbPath = '/var/www/html/db/dataDB/navigation.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        $nav = new Navigation();
+        $nav->setName($name);
+        $nav->setUrl($url);
+        $nav->setState($state);
+        $nav->setKey($key);
+        return $dbhandle->setValueForKey($key,$nav);
+    }
+
+    /**
+     * 获取全部导航
+     * @return mixed
+     */
+    function getAllNav(){
+        $dbPath = '/var/www/html/db/dataDB/navigation.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getAll();
+    }
+
+    /**
+     * 获取单个导航
+     * @param $key
+     * @return mixed
+     */
+    function getOneNav($key){
+        $dbPath = '/var/www/html/db/dataDB/navigation.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getValueForKey($key);
+    }
+
+    /**
+     * 删除导航
+     * @param $key
+     */
+    function deleteNav($key){
+        $dbPath = '/var/www/html/db/dataDB/navigation.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        $dbhandle->removeValueForKey($key);
+    }
+
+    /**
+     * 文案添加
+     * @param $key
+     * @param $value
+     * @return mixed
+     */
+    function addOther($key,$value){
+        $dbPath = '/var/www/html/db/dataDB/other.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->setValueForKey($key,$value);
+    }
+
+    /**
+     * 获取全部文案
+     * @return mixed
+     */
+    function getAllOther(){
+        $dbPath = '/var/www/html/db/dataDB/other.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getAll();
+    }
+
+    /**
+     * 获取单个文案
+     * @param $key
+     * @return mixed
+     */
+    function getOneOther($key){
+        $dbPath = '/var/www/html/db/dataDB/other.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getValueForKey($key);
+    }
+
+    /**
+     * 删除文案
+     * @param $key
+     */
+    function deleteOther($key){
+        $dbPath = '/var/www/html/db/dataDB/other.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        $dbhandle->removeValueForKey($key);
+    }
+
+    //添加图片
+
+    /**
+     * 添加图片
+     * @param $name
+     * @param $url
+     * @param $outerUrl
+     * @return bool
+     */
+    function addImg($name,$url,$outerUrl){
+        $dbPath = '/var/www/html/db/dataDB/img.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        $img = new Img();
+        $img->setName($name);
+        $img->setUrl($url);
+        $img->setOutUrl($outerUrl);
+        return $dbhandle->setValueForKey($name,$img);
+    }
+
+    /**
+     * 获取全部图片
+     * @return mixed
+     */
+    function getAllImg(){
+        $dbPath = '/var/www/html/db/dataDB/img.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getAll();
+    }
+
+    /**
+     * 获取单张图片
+     * @param $key
+     * @return mixed
+     */
+    function getOneImg($key){
+        $dbPath = '/var/www/html/db/dataDB/img.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getValueForKey($key);
+    }
+
+    /**
+     * 删除图片
+     * @param $key
+     */
+    function deleteImg($key){
+        $dbPath = '/var/www/html/db/dataDB/img.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        $dbhandle->removeValueForKey($key);
+    }
+
 }

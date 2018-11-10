@@ -12,7 +12,7 @@ $footer = new Footer();
         <div class="inner w">
             <div class="about-us">
                 <p class="title">关于我们</p>
-                <p class="content"><?php echo $footer->about?></p>
+                <p class="content"><?php echo $pr->getOneOther("footerabout")?></p>
             </div>
             <nav class="footer-nav">
                         <span class="help-center">
@@ -48,7 +48,7 @@ $footer = new Footer();
             </nav>
         </div>
     </section>
-    <p class="copyright">2017-2018;深圳市蚂蚁区块链科技有限公司---<?php echo $footer->IPC?></p>
+    <p class="copyright"><?php echo $pr->getOneOther("footeripc")."<a href=\"http://www.miitbeian.gov.cn/\" target=\"_blank\">".$pr->getOneOther("ipc")."</a>"?></p>
 </footer>
 <!--  -->
 
@@ -169,6 +169,45 @@ $footer = new Footer();
         //     }
         // });
     });
+
+    $(function () {
+        $('.about').on('click', function () {
+            $(this).addClass('current');
+            $('.thought').removeClass('current');
+            $('.xinDongThought').hide();
+            $('.xinDongAbout').show();
+        });
+        $('.thought').on('click', function () {
+            $(this).addClass('current');
+            $('.about').removeClass('current');
+            $('.xinDongAbout').hide();
+            $('.xinDongThought').show();
+        });
+        $('.btn-jianjie').on('click', function () {
+            $(this).addClass('current');
+            $('.btn-shouhou').removeClass('current');
+            $('.shouhou').hide();
+            $('.jianjie').show();
+        });
+        $('.btn-shouhou').on('click', function () {
+            $(this).addClass('current');
+            $('.btn-jianjie').removeClass('current');
+            $('.jianjie').hide();
+            $('.shouhou').show();
+        });
+    });
+    (function () {
+        $("#wei").mouseenter(function () {
+            $("#wei_img").css({
+                "display":"inline"
+            })
+        });
+        $("#wei" ).mouseleave(function () {
+            $("#wei_img").css({
+                "display":"none"
+            })
+        });
+    })();
 </script>
 <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10184269/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
 </body>

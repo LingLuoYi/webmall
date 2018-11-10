@@ -5,7 +5,7 @@
     <meta charset='utf-8'>
     <!-- 优先使用 IE 最新版本和 Chrome -->
     <script src='http://libs.baidu.com/jquery/2.1.1/jquery.min.js'></script>
-    <link rel='stylesheet' type'test/css' href='//layui.hcwl520.com.cn/layui-v2.4.3/css/layui.css?v=201809030202'></link>
+    <link rel='stylesheet' type="text/css" href='//layui.hcwl520.com.cn/layui-v2.4.3/css/layui.css?v=201809030202'>
     <script src='//layui.hcwl520.com.cn/layui-v2.4.3/layui.js?v=201809030202'></script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>Backstage</title>

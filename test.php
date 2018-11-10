@@ -38,5 +38,29 @@ require_once "./db/objectdb.php";
     bannerName：<input name="bannerName" type="text"><br>
     <input type="submit" value="提交">
 </form>
+
+添加导航：
+<form action="controller/ProductsController.php" method="post">
+    名称：<input name="navname" type="text"><br>
+    链接：<input name="navurl" type="text"><br>
+    状态：<input name="navstate" type="text"><br>
+    key：<input name="navkey" type="text"><br>
+    <input type="submit" value="提交">
+</form>
+
+添加文案：
+<form action="controller/ProductsController.php" method="post">
+    key：<input name="otherkey" type="text"><br>
+    内容：<input name="othervalue" type="text"><br>
+    <input type="submit" value="提交">
+</form>
+
+添加图片：
+<form action="controller/ProductsController.php" method="post">
+    名字：<input name="imgname" type="text"><br>
+    地址：<input name="imgurl" type="text"><br>
+    外链地址：<input name="imgouturl" type="text"><br>
+    <input type="submit" value="提交">
+</form>
 </body>
 </html>
