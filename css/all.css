@@ -610,12 +610,12 @@ header .tip i {
 }
 
 .main .banner p:nth-of-type(1) {
-    bottom: -2.38rem;
-    font-size: 0.68rem;
+    bottom: -0.9rem;
+    font-size: 0.28rem;
 }
 
 .main .banner p:nth-of-type(2) {
-    bottom: -2.76rem;
+    bottom: -2.1rem;
     font-size: 0.28rem;
 }
 

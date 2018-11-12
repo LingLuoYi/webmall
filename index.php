@@ -77,7 +77,7 @@ include 'split/header.php';
                         if ($banner->getType() == "index2"){
                             echo '<div class="swiper-slide">';
                             echo '<a href="'.$banner->getUrl().'">';
-                            echo '<img src="'.$banner->getBannerUrl().'" alt="'.$banner->getName.'">';
+                            echo '<img src="'.$banner->getBannerUrl().'" alt="'.$banner->getName().'">';
                             echo '</a>';
                             echo '</div>';
                         }
