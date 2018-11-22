@@ -6,12 +6,14 @@
  * Time: 2:15 PM
  */
 
+
 require_once '/var/www/html/db/objectdb.php';
 require_once '/var/www/html/model/Products.php';
 require_once '/var/www/html/model/Menu.php';
 require_once '/var/www/html/model/Banner.php';
 require_once '/var/www/html/model/Navigation.php';
 require_once '/var/www/html/model/Img.php';
+
 
 class ProductsServer
 {
@@ -303,4 +305,21 @@ class ProductsServer
         $dbhandle->removeValueForKey($key);
     }
 
+    /**
+     * 添加用户
+     * @param $user
+     * @param $pass
+     * @return bool
+     */
+    function addUser($user,$pass){
+        $dbPath = '/var/www/html/db/dataDB/user.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->setValueForKey($user,$pass);
+    }
+
+    function getUser($user){
+        $dbPath = '/var/www/html/db/dataDB/user.db';
+        $dbhandle = objectdb::defaultdb($dbPath);
+        return $dbhandle->getValueForKey($user);
+    }
 }

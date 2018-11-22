@@ -5,7 +5,6 @@
  * Date: 2018/11/8
  * Time: 10:55 AM
  */
-$footer = new Footer();
 ?>
 <footer class="footer">
     <section class="aboutUs">
@@ -53,12 +52,12 @@ $footer = new Footer();
 <!--  -->
 
 </div>
-<script src="../lib/jQuery/jquery-3.3.1.min.js"></script>
-<script src="../lib/swiper/swiper.min.js"></script>
-<script src="../js/common.js"></script>
+<script src="./lib/jQuery/jquery-3.3.1.min.js"></script>
+<script src="./lib/swiper/swiper.min.js"></script>
+<script src="./js/common.js"></script>
 <script>
     $(function () {
-        var swiper = new Swiper('.swiper-products', {
+        new Swiper('.swiper-products', {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
@@ -104,9 +103,7 @@ $footer = new Footer();
 
             }
         ?>
-    });
-    /////////////////////////////////////
-    $(function () {
+        /////////////////////////////////////
         var swiper = new Swiper('.swiper-index', {
             navigation: {
                 nextEl: '.swiper-button-next',
@@ -132,45 +129,7 @@ $footer = new Footer();
                 $('.swiper-button-prev').hide();
             }
         });
-        $('.swiper-index').mouseenter(function () {
-            swiper.stopAutoplay();
-            swiper.enableMousewheelControl();
-        });
-        $('.swiper-index').mouseleave(function () {
-            swiper.startAutoplay();
-            swiper.disableMousewheelControl();
-        });
-        //导航条浮动
-        // var headerTop = $('.header').offset().top;
-        // $(window).on('scroll', function (e) {
-        //     e = e || window.event;
-        //     var windowTop = $(window).scrollTop();
-        //     if (windowTop >= headerTop) {
-        //         $('.header').css({
-        //             'position': 'fixed',
-        //             'top': '0'
-        //         });
-        //     } else {
-        //         $('.header').css({
-        //             'position': 'absolute',
-        //         });
-        //     }
-        //     if (windowTop >= headerTop) {
-        //         $('.cover').css({
-        //             'position': 'fixed',
-        //             'top': '0',
-        //             'backgroundColor': 'rgba(0, 0, 0, 0.5)'
-        //         });
-        //     } else {
-        //         $('.cover').css({
-        //             'position': 'absolute',
-        //             'backgroundColor': 'rgba(0, 0, 0, 0.5)'
-        //         });
-        //     }
-        // });
-    });
-
-    $(function () {
+        ///////////////////////////////////////////////
         $('.about').on('click', function () {
             $(this).addClass('current');
             $('.thought').removeClass('current');
@@ -195,8 +154,7 @@ $footer = new Footer();
             $('.jianjie').hide();
             $('.shouhou').show();
         });
-    });
-    (function () {
+        ////////////////////////////////////////////////
         $("#wei").mouseenter(function () {
             $("#wei_img").css({
                 "display":"inline"
@@ -207,7 +165,7 @@ $footer = new Footer();
                 "display":"none"
             })
         });
-    })();
+    });
 </script>
 <script>(function() {var _53code = document.createElement("script");_53code.src = "https://tb.53kf.com/code/code/10184269/1";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(_53code, s);})();</script>
 </body>

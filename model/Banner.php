@@ -6,6 +6,7 @@
  * Time: 3:13 PM
  */
 
+
 class Banner
 {
     private $bannerUrl;

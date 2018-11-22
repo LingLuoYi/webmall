@@ -56,7 +56,7 @@ echo "    body .mainmenu li:nth-child(8n+4) {background-color:#84d018}";
 echo "    body .mainmenu li:nth-child(8n+5) {background-color:#14c760}";
 echo "    body .mainmenu li:nth-child(8n+6) {background-color:#f3b613}";
 echo "    body .mainmenu li:nth-child(8n+7) {background-color:#ff8a4a}";
- echo "   body .mainmenu li:nth-child(8n+8) {background-color:#fc5366}";
+echo "   body .mainmenu li:nth-child(8n+8) {background-color:#fc5366}";
 echo "</style>";
 echo "</head>";
 echo "";

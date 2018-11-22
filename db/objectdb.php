@@ -6,14 +6,15 @@
  * Time: 2:21 PM
  * 假装有数据库  ╯︿╰﹀
  */
+
 class objectdb
 {
 
     private static $db;
 
-    //成功返回 objectdb 对象,不需要在外面使用new
-    //目录需要写文件的权限
     /**
+     * 成功返回 objectdb 对象,不需要在外面使用new
+     * 目录需要写文件的权限
      * 连接数据库
      * @param $dbname
      * @return bool|objectdb
@@ -55,6 +56,7 @@ class objectdb
     {
         $arrdata = $this->getDBarray();
         unset($arrdata[$key]);
+        file_put_contents(self::$db,serialize($arrdata));
     }
 
 

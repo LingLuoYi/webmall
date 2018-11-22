@@ -6,7 +6,6 @@
  * Time: 10:15 AM
  */
 header("Content-type: text/html; charset=utf-8");
-$header = new Header();
 ?>
 <!DOCTYPE html>
 <html lang="cn">

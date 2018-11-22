@@ -6,9 +6,7 @@
  * Time: 3:54 PM
  */
 header("Content-type: text/html; charset=utf-8");
-require_once("config/config.php");
-require_once './server/ProductsServer.php';
-$allProducts = new AllProducts();
+require_once "./server/ProductsServer.php";
 $pr = new ProductsServer();
 $menu = $pr->getAllMenu();
 $dir = dirname(__FILE__) . "/img/products/";
