@@ -10,40 +10,61 @@
     <section class="aboutUs">
         <div class="inner w">
             <div class="about-us">
-                <p class="title">关于我们</p>
-                <p class="content"><?php echo $pr->getOneOther("footerabout")?></p>
+<!--                <p class="title">关于我们</p>-->
+<!--                <p class="content">--><?php //echo $pr->getOneOther("footerabout")?><!--</p>-->
             </div>
             <nav class="footer-nav">
-                        <span class="help-center">
+                        <span class="tech-supports">
                             <p>
-                                <a href="./contactUs.html">帮助中心</a>
+                                <a href="javascript:;">全部产品</a>
                             </p>
-                            <ul>
+                            <ul style="left: 15px">
                                 <li>
-                                    <a href="./aboutUs.html">FAQ</a>
+                                    <a href="javascript:;">矿机</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">托管</a>
                                 </li>
                             </ul>
                         </span>
                 <span class="tech-supports">
                             <p>
-                                <a href="./contactUs.html">技术支持</a>
+                                <a href="javascript:;">售后服务</a>
                             </p>
                             <ul>
                                 <li>
-                                    <a href="./contactUs.html">售后服务</a>
+                                    <a href="javascript:;">技术支持</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">矿机售后</a>
                                 </li>
                             </ul>
                         </span>
-                <span class="products-center">
+                <span class="products-about">
                             <p>
-                                <a href="./allProducts.html">产品中心</a>
+                                <a href="javascript:;">关于我们</a>
                             </p>
                             <ul>
                                 <li>
-                                    <a href="./allProducts.html">矿机</a>
+                                    <a href="javascript:;">公司简介</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;">公司地址</a>
                                 </li>
                             </ul>
                         </span>
+                <span style="flex: none">
+                    <div class="img-footer">
+                        <div class="img-footer-one">
+                            <div style="font-size: 0.13rem">大客户经理</div>
+                            <img width="100%" height="100%" src="../img/dakefu.jpeg">
+                        </div>
+                        <div  class="img-footer-one">
+                            <div style="font-size: 0.13rem">微信公众号</div>
+                            <img width="100%" height="100%" src="../img/wei.jpg">
+                        </div>
+                    </div>
+                </span>
             </nav>
         </div>
     </section>

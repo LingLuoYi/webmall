@@ -54,12 +54,12 @@ $dir = dirname(__FILE__) . "/img/products/";
 <body>
 <!--导航-->
 <ul class="layui-nav" lay-filter="nav" >
-    <li class="layui-nav-item layui-this"><a href="javascript:;">页面修改</a></li>
-    <li class="layui-nav-item"><a href="javascript:;">页眉页脚</a></li>
-    <li class="layui-nav-item"><a href="javascript:;">图片库</a></li>
-    <li class="layui-nav-item"><a href="javascript:;">文案库</a></li>
-    <li class="layui-nav-item"><a href="javascript:;">详情页</a></li>
-    <li class="layui-nav-item">
+    <li id="layui-nav-1" class="layui-nav-item layui-this"><a href="javascript:;">页面修改</a></li>
+    <li id="layui-nav-2" class="layui-nav-item"><a href="javascript:;">页眉页脚</a></li>
+    <li id="layui-nav-3" class="layui-nav-item"><a href="javascript:;">图片库</a></li>
+    <li id="layui-nav-4" class="layui-nav-item"><a href="javascript:;">文案库</a></li>
+    <li id="layui-nav-5" class="layui-nav-item"><a href="javascript:;">详情页</a></li>
+    <li id="layui-nav-6" class="layui-nav-item">
         <a href="javascript:;">Linglouyi</a>
         <dl class="layui-nav-child">
             <dd><a href="javascript:;" onclick="passupdate()">修改密码</a></dd>
@@ -68,12 +68,13 @@ $dir = dirname(__FILE__) . "/img/products/";
     </li>
 </ul>
 
+
 <!--页面修改-->
 <div id="page">
 <!--页面修改-->
 <!--预览-->
 <div id="yu">
-<iframe width="900px" height="1150px" src="../index.php"></iframe>
+<iframe width="900px" onload="this.height=this.contentWindow.document.body.scrollHeight" src="../index.php"></iframe>
 </div>
 
 <!--页面选择-->
@@ -464,7 +465,7 @@ $dir = dirname(__FILE__) . "/img/products/";
 <!--页眉页脚-->
 <div id="footerforheader">
     <div id="yu">
-        <iframe width="900px" height="1150px" src="../index.php"></iframe>
+        <iframe width="900px" onload="this.height=this.contentWindow.document.body.scrollHeight" src="../index.php"></iframe>
     </div>
 
     <div class="admin">
@@ -673,13 +674,14 @@ $dir = dirname(__FILE__) . "/img/products/";
 <script src="https://cdn.bootcss.com/clipboard.js/2.0.1/clipboard.min.js"></script>
 <script >
     var form;
+    var element;
     layui.use('layer', function(){
         var layer = layui.layer;
     });
 
     //导航监听
     layui.use('element', function(){
-        var element = layui.element;
+        element = layui.element;
 
         //监听导航点击
         element.on('nav(nav)', function(elem){
@@ -813,12 +815,12 @@ $dir = dirname(__FILE__) . "/img/products/";
         form.on("submit(pro)",function (date) {
            layer.closeAll('page');
            // console.log(date.field);
-           var datas;
-           if (isEmpty(date.field.states)){
-               datas = "name="+date.field.names+"&img="+date.field.imgs+"&state=1&details="+date.field.detailss+"&type="+date.field.typess;
-           }else {
-               datas = "name="+date.field.names+"&img="+date.field.imgs+"&state=0&details="+date.field.detailss+"&type="+date.field.typess;
-           }
+           var  datas = "name="+date.field.names+"&img="+date.field.imgs+"&state="+date.field.statesssss+"&details="+date.field.detailss+"&type="+date.field.typess;
+           // if (isEmpty(date.field.states)){
+           //     datas = "name="+date.field.names+"&img="+date.field.imgs+"&state=1&details="+date.field.detailss+"&type="+date.field.typess;
+           // }else {
+           //     datas = "name="+date.field.names+"&img="+date.field.imgs+"&state=0&details="+date.field.detailss+"&type="+date.field.typess;
+           // }
            $.ajax({
                url: "../controller/ProductsController.php",
                type: "post",
@@ -826,6 +828,7 @@ $dir = dirname(__FILE__) . "/img/products/";
                dataType: "text",
                xhrFields: {withCredentials: true},
                success: function (date) {
+                   send('../allProducts.php')
                    layer.msg(date);
                },
                error: function () {
@@ -886,6 +889,7 @@ $dir = dirname(__FILE__) . "/img/products/";
             done: function (date) {
                 //上传完毕回调
                 layer.msg(date.msg);
+                window.location.href='./index.php?nav=3';
             },
             error: function () {
                 //错误回调
@@ -901,6 +905,7 @@ $dir = dirname(__FILE__) . "/img/products/";
             done: function (date) {
                 //上传完毕回调
                 layer.msg(date.msg);
+                window.location.href='./index.php?nav=3';
             },
             error: function () {
                 //错误回调
@@ -916,6 +921,7 @@ $dir = dirname(__FILE__) . "/img/products/";
             done: function (date) {
                 //上传完毕回调
                 layer.msg(date.msg);
+                window.location.href='./index.php?nav=3';
             },
             error: function () {
                 //错误回调
@@ -1044,6 +1050,7 @@ $dir = dirname(__FILE__) . "/img/products/";
         var id = ""+ids;
         layer.tab({
             area: ['600px', '300px'],
+            maxmin: true,
             tab: [{
                 title: '轮播图片',
                 content: '<?php
@@ -1107,9 +1114,9 @@ $dir = dirname(__FILE__) . "/img/products/";
         layer.open({
             type: 1,
             skin: 'layui-layer-rim',
-            area: ['400px', '350px'],
+            area: ['400px', '450px'],
             title: '编辑',
-            content: '<div style="text-align: center"><form style="width: 95%" class="layui-form" action=""><input id="type" type="text" name="typess" style="display: none"><div class="layui-form-item"><label class="layui-form-label">商品名称</label><div class="layui-input-block"><input id="name" type="text" name="names" required  lay-verify="required" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item"><label class="layui-form-label">商品URL</label><div class="layui-input-block"><input id="commodityUrl" type="text" name="imgs" required  lay-verify="required" placeholder="请选择图片" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item"><label class="layui-form-label">详情URL</label><div class="layui-input-block"><input id="commodityOutUrl" type="text" name="detailss" required  lay-verify="required" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item" style="width: 400px"><input type="checkbox" name="states" lay-skin="switch" lay-text="上架|下架" checked></div><div class="layui-form-item" style="width: 400px"><button class="layui-btn" lay-submit lay-filter="pro"><i class="layui-icon">&#xe605;</i> 修改</button></div></form><button id="rem" value="" onclick="rem(this.name,this.value)" class="layui-btn"><i class="layui-icon">&#x1006;</i> 删除</button></div>',
+            content: '<div style="text-align: center"><form style="width: 95%" class="layui-form" action=""><input id="type" type="text" name="typess" style="display: none"><div class="layui-form-item"><label class="layui-form-label">商品名称</label><div class="layui-input-block"><input id="name" type="text" name="names" required  lay-verify="required" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item"><label class="layui-form-label">商品URL</label><div class="layui-input-block"><input id="commodityUrl" type="text" name="imgs" required  lay-verify="required" placeholder="请选择图片" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item"><label class="layui-form-label">详情URL</label><div class="layui-input-block"><input id="commodityOutUrl" type="text" name="detailss" required  lay-verify="required" autocomplete="off" class="layui-input" value=""></div></div><div class="layui-form-item" style="width: 400px"><select name="statesssss" lay-verify=""><option value="0">上架</option><option value="1">下架</option><option value="2">新品</option><option value="3">热销</option></select> </div><div class="layui-form-item" style="width: 400px"><button class="layui-btn" lay-submit lay-filter="pro"><i class="layui-icon">&#xe605;</i> 修改</button></div></form><button id="rem" value="" onclick="rem(this.name,this.value)" class="layui-btn"><i class="layui-icon">&#x1006;</i> 删除</button></div>',
             success: function(layero, index){
                 $("#name").val(name);
                 $("#commodityUrl").val(commodityUrl);
@@ -1165,7 +1172,7 @@ $dir = dirname(__FILE__) . "/img/products/";
             dataType: "text",
             xhrFields: {withCredentials: true},
             success: function (date) {
-                layer.msg(date);
+                console.log(type);
             },
             error: function () {
                 layer.msg("错误");
@@ -1415,11 +1422,100 @@ $dir = dirname(__FILE__) . "/img/products/";
                 }, function(){
                     deletes(namess);
                     layer.msg('已删除', {icon: 1});
+                    window.location.href = './index.php?nav=5';
                 }, function(){
                     //取消
                 });
             }
         });
+
+        //导航设置
+        console.log(getParam('nav'));
+        if (getParam('nav') === '1') {
+            $("#layui-nav-1").addClass('layui-this');
+            $("#layui-nav-2").removeClass('layui-this');
+            $("#layui-nav-3").removeClass('layui-this');
+            $("#layui-nav-4").removeClass('layui-this');
+            $("#layui-nav-5").removeClass('layui-this');
+            $("#layui-nav-6").removeClass('layui-this');
+
+            //
+            $("#footerforheader").hide();
+            $("#picture").hide();
+            $("#official").hide();
+            $("#details").hide();
+        }else if (getParam('nav') === '2') {
+            $("#layui-nav-1").removeClass('layui-this');
+            $("#layui-nav-2").addClass('layui-this');
+            $("#layui-nav-3").removeClass('layui-this');
+            $("#layui-nav-4").removeClass('layui-this');
+            $("#layui-nav-5").removeClass('layui-this');
+            $("#layui-nav-6").removeClass('layui-this');
+
+            //
+            $("#page").hide();
+            $("#footerforheader").show();
+            $("#picture").hide();
+            $("#official").hide();
+            $("#details").hide();
+        }else if (getParam('nav') === '3') {
+            $("#layui-nav-1").removeClass('layui-this');
+            $("#layui-nav-2").removeClass('layui-this');
+            $("#layui-nav-3").addClass('layui-this');
+            $("#layui-nav-4").removeClass('layui-this');
+            $("#layui-nav-5").removeClass('layui-this');
+            $("#layui-nav-6").removeClass('layui-this');
+
+            //
+            $("#page").hide();
+            $("#footerforheader").hide();
+            $("#picture").show();
+            $("#official").hide();
+            $("#details").hide();
+        }else if (getParam('nav') === '4') {
+            $("#layui-nav-1").removeClass('layui-this');
+            $("#layui-nav-2").removeClass('layui-this');
+            $("#layui-nav-3").removeClass('layui-this');
+            $("#layui-nav-4").addClass('layui-this');
+            $("#layui-nav-5").removeClass('layui-this');
+            $("#layui-nav-6").removeClass('layui-this');
+
+            //
+            $("#page").hide();
+            $("#footerforheader").hide();
+            $("#picture").hide();
+            $("#official").show();
+            $("#details").hide();
+        }else if (getParam('nav') === '5') {
+            $("#layui-nav-1").removeClass('layui-this');
+            $("#layui-nav-2").removeClass('layui-this');
+            $("#layui-nav-3").removeClass('layui-this');
+            $("#layui-nav-4").removeClass('layui-this');
+            $("#layui-nav-5").addClass('layui-this');
+            $("#layui-nav-6").removeClass('layui-this');
+
+            //
+            $("#page").hide();
+            $("#footerforheader").hide();
+            $("#picture").hide();
+            $("#official").hide();
+            $("#details").show();
+        }else if (getParam('nav') === '6') {
+            $("#layui-nav-1").removeClass('layui-this');
+            $("#layui-nav-2").removeClass('layui-this');
+            $("#layui-nav-3").removeClass('layui-this');
+            $("#layui-nav-4").removeClass('layui-this');
+            $("#layui-nav-5").removeClass('layui-this');
+            $("#layui-nav-6").addClass('layui-this');
+
+            //
+            $("#page").hide();
+            $("#footerforheader").hide();
+            $("#picture").hide();
+            $("#official").hide();
+            $("#details").hide();
+        }
+        element.init();
         });
 
     //退出
@@ -1484,6 +1580,15 @@ $dir = dirname(__FILE__) . "/img/products/";
         })
     }
 
+    function getParam(paramName) {
+        paramValue = "", isFound = !1;
+        if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+            arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&"), i = 0;
+            while (i < arrSource.length && !isFound) arrSource[i].indexOf("=") > 0 && arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase() && (paramValue = arrSource[i].split("=")[1], isFound = !0), i++
+        }
+        return paramValue == "" && (paramValue = null), paramValue
+    }
+
     function isEmpty(obj)
     {
         for (var name in obj)
@@ -1501,6 +1606,7 @@ $dir = dirname(__FILE__) . "/img/products/";
             layer.msg('复制成功', {icon: 1});
         }, function(){
             deletes(e.text);
+            window.location.href = './index.php?nav=3';
         });
         // console.log(e.text);
         // layer.msg("地址已经复制到剪切板",{icon: 1});

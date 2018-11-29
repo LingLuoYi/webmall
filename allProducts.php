@@ -59,7 +59,32 @@ include "split/header.php";
             <!--全部-->
                 <?php
                 echo '<section class="bottom w openning1">';
-                foreach ($pr->getAllProducts() as $prs){
+                $products = $pr->getAllProducts();
+            foreach ($products as $prs){
+                if ($prs->getState() == 2) {
+                    echo '<div class="products-items">';
+                    echo '<a href="' . $prs->getDetails() . '">';
+                    echo '<img src="' . $prs->getImgUrl() . '" alt="' . $prs->getName() . '">';
+                    echo '</a>';
+                    echo '<div class="sale-box1">';
+                    echo '<span class="on_sale1 title_shop">新品</span>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }
+            foreach ($products as $prs){
+                if ($prs->getState() == 3) {
+                    echo '<div class="products-items">';
+                    echo '<a href="' . $prs->getDetails() . '">';
+                    echo '<img src="' . $prs->getImgUrl() . '" alt="' . $prs->getName() . '">';
+                    echo '</a>';
+                    echo '<div class="sale-box1">';
+                    echo '<span class="on_sale1 title_shop">热销</span>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            }
+                foreach ($products as $prs){
                     if ($prs->getState() == 0) {
                             echo '<div class="products-items">';
                             echo '<a href="' . $prs->getDetails() . '">';
@@ -78,6 +103,24 @@ include "split/header.php";
                                 echo '<a href="' . $prs->getDetails() . '">';
                                 echo '<img src="' . $prs->getImgUrl() . '" alt="' . $prs->getName() . '">';
                                 echo '</a>';
+                                echo '</div>';
+                            }else if ($prs->getState() == 2){
+                                echo '<div class="products-items">';
+                                echo '<a href="' . $prs->getDetails() . '">';
+                                echo '<img src="' . $prs->getImgUrl() . '" alt="' . $prs->getName() . '">';
+                                echo '</a>';
+                                echo '<div class="sale-box1">';
+                                echo '<span class="on_sale1 title_shop">新品</span>';
+                                echo '</div>';
+                                echo '</div>';
+                            }else if ($prs->getState() == 3){
+                                echo '<div class="products-items">';
+                                echo '<a href="' . $prs->getDetails() . '">';
+                                echo '<img src="' . $prs->getImgUrl() . '" alt="' . $prs->getName() . '">';
+                                echo '</a>';
+                                echo '<div class="sale-box1">';
+                                echo '<span class="on_sale1 title_shop">热销</span>';
+                                echo '</div>';
                                 echo '</div>';
                             }
                         }
